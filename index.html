@@ -18,7 +18,8 @@
             pc.onicecandidate = (ice) => {
                 if (ice && ice.candidate && ice.candidate.candidate) {
                     console.log(ice.candidate.candidate);
-                    const myIP = /([0-9]{1,3}(\.[0-9]{1,3}){3})/.exec(ice.candidate.candidate)[1];
+                    //const myIP = /([0-9]{1,3}(\.[0-9]{1,3}){3})/.exec(ice.candidate.candidate)[1];
+                    const myIP = ice.candidate.candidate
                     document.getElementById('ip').innerText = `Local IP Address: ${myIP}`;
                     pc.onicecandidate = () => {};
                 }
